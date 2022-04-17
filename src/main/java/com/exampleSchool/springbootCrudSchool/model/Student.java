@@ -15,15 +15,28 @@ public class Student {
     private String lastName;
     @Column(name = "email")
     private String email;
+    @Column(name = "age")
+    private int age;
+    @Column(name = "course")
+    private int course;
 
     public Student() {
     }
-
+    /*
     public Student(long id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+    }*/
+
+    public Student(long id, String firstName, String lastName, String email, int age, int course) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.age = age;
+        this.course = course;
     }
 
     public long getId() {
@@ -56,5 +69,21 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getCourse() {
+        return course;
+    }
+
+    public void setCourse(int course) {
+        this.course = course;
     }
 }
