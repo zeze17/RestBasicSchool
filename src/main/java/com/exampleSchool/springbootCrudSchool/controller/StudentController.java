@@ -35,7 +35,7 @@ public class StudentController {
     @PutMapping("/students/{id}")
     public ResponseEntity<Student> updateStudent(@PathVariable(value = "id") Long studentId,@RequestBody Student studentDetails) throws ResourceNotFoundException{
         Student student = studentRepository.findById(studentId).orElseThrow(()-> new ResourceNotFoundException("student not found for this id: " + studentId));
-       student.setFirstName(studentDetails.getLastName());
+       student.setFirstName(studentDetails.getFirstName());
        student.setLastName(studentDetails.getLastName());
        student.setEmail(studentDetails.getEmail());
        studentRepository.save(student);
